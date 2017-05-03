@@ -1,0 +1,1 @@
+document.write("hello, Webpack! now watching for changes too.");
