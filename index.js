@@ -1,3 +1,4 @@
+require('./style.scss')
 class car {
     manufecturer(car) {
         document.write(`I have a ${car}`);
