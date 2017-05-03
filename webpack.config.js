@@ -2,12 +2,17 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+var debug = process.env.NODE_ENV !== "production";
 
 let config = {
+    devtool: 'source-map',
+    devtool: debug ? "inline-sourcemap" : null,
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: 'output.js'
+        filename: '[name].js',
+        sourceMapFilename: '[name].js.map',
+        chunkFilename: '[id].chunk.js'
     },
     module: {
         rules: [{
